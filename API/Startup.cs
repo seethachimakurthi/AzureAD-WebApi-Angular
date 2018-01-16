@@ -35,7 +35,7 @@ namespace API
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
-                    options.Authority = "https://login.microsoftonline.com/77781920-c274-4f30-9017-42b2c8fbf0e9/";
+                    options.Authority = string.Format("https://login.microsoftonline.com/{0}/", tenantId);// 77781920-c274-4f30-9017-42b2c8fbf0e9/";
                     options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
                     {
                         ValidateIssuer = true,
